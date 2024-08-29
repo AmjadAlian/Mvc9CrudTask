@@ -1,0 +1,18 @@
+﻿@{
+    ViewData["Title"] = "Edit Student";
+}
+@model Student
+<h1>Edit Student</h1>
+<form asp-controller="Students" asp-action="Edit">
+    <div class="mb-3">
+        <label for="Name" class="form-label">Name</label>
+        <input type="text" class="form-control" id="Name" value="@Model.Name" name="Name">
+
+    </div>
+    <div class="mb-3">
+        <label for="Age" class="form-label">Age</label>
+        <input type="number" class="form-control" id="Age" value="@Model.Age" name="Age">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

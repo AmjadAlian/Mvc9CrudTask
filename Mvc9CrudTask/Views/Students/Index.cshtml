@@ -1,0 +1,49 @@
+﻿@model List<Student>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<a class="btn btn-outline-success " asp-area="" asp-controller="Students" asp-action="Create">Create New</a>
+<h1>All Studnets</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Age</th>
+            <th scope="">Action</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.Id
+
+                </td>
+                <td>
+                    @item.Name
+                </td>
+                <td>@item.Age
+                </td>
+                <td >
+                    <a asp-controller="students" asp-action="edit" asp-route-id="@item.Id" class="btn btn-outline-info">
+                    Edit
+                    </a>
+
+                
+                    <a asp-controller="students" asp-action="delete" asp-route-id="@item.Id" class="btn btn-outline-danger">
+
+                        Delete
+                    </a>
+                
+                </td>
+               
+            </tr>
+        }
+
+    </tbody>
+</table>
